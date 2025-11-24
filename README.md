@@ -60,6 +60,14 @@ Find secrets & keys (private, public and secret keys)
 > "opensslconf": OpenSSL Configuration Plugin
 Reads OpenSSL configuration files and adds tls protocol and cipher suites to CBOM
 
+> "pqreadiness": Post-Quantum Readiness Assessment Plugin
+Assess cryptographic algorithms for post-quantum security and identify quantum-vulnerable components
+Categorizes algorithms as vulnerable, resistant, or post-quantum and provides migration guidance
+
+> "problematicca": Problematic CA Detection Plugin
+Check for certificates issued by CAs with a history of security malpractice or compromise
+Flags certificates from compromised, distrusted, or deprecated certificate authorities
+
 Usage:
   cbomkit-theia [command]
 
@@ -115,6 +123,8 @@ By default, all available plugins are enabled:
 - javasecurity
 - secrets (private, public and secret keys)
 - opensslconf
+- pqreadiness
+- problematicca
 
 **Important Note:** The application is configured to ensure all plugins are always available. If you manually edit the configuration file to exclude specific plugins, CBOMkit-theia will detect this and automatically restore all plugins to their default enabled state on the next run. If you need to disable specific plugins for a particular run, use the `-p` flag instead of modifying the config file:
 
